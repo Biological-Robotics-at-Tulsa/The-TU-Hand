@@ -1,0 +1,1 @@
+controller_joint_names: ['mcp_rot_thumb', 'fusion_thumb_flex', 'dp_thumb_axis', 'mcp_index_rot', 'flex_mcp_index', 'pp_flex_index', 'dp_index_flex', 'mcp_rot_middle', 'mcp_flex_middle', 'pp_middle_flex', 'dp_middle_flex', 'mcp_rot_ring', 'mcp_ring_flex', 'pp_ring_flex', 'dp_flex_ring', 'mcp_pinky_rot2', 'mcp_pinky_flex', 'pp_pinky_flex', 'dp_pinky_flex', ]

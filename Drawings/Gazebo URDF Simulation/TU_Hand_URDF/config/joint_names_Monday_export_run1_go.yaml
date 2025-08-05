@@ -1,0 +1,1 @@
+controller_joint_names: ['t_top_joint', 't_fuse_joint', 't_dp_joint', 'i_trans_joint', 'i_proximal_joint', 'i_middle_joint', 'i_dp_joint', 'm_trans_joint', 'm_proximal_joint', 'm_middle_joint', 'm_dp_joint', 'r_trans_joint', 'r_proximal_joint', 'r_middle_joint', 'r_dp_joint', 'p_trans_joint', 'p_proximal_joint', 'p_middle_joint', 'p_dp_joint', ]

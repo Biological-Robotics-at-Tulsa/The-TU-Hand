@@ -1,0 +1,834 @@
+<robot
+  name="postfinal">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0080864 0.042367 0.076895"
+        rpy="0 0 0" />
+      <mass
+        value="0.11988" />
+      <inertia
+        ixx="0.00012204"
+        ixy="-1.1575E-07"
+        ixz="-8.7731E-06"
+        iyy="5.6854E-05"
+        iyz="1.0672E-05"
+        izz="6.8915E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="thumb_mcp">
+    <inertial>
+      <origin
+        xyz="0.0025741 0.0069861 -2.616E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0060855" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_mcp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_mcp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_rot_thumb"
+    type="revolute">
+    <origin
+      xyz="0.018875 0.083396 0.04919"
+      rpy="-3.1416 -0.4851 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="thumb_mcp" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="thumb_fusion">
+    <inertial>
+      <origin
+        xyz="-0.0419247222242409 -0.00323141416541415 -0.00817843099744259"
+        rpy="0 0 0" />
+      <mass
+        value="0.0137264661968938" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_fusion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_fusion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fusion_thumb_flex"
+    type="revolute">
+    <origin
+      xyz="0.00075487 0.00060402 -0.00093856"
+      rpy="0.046495 0.25773 -3.1246" />
+    <parent
+      link="thumb_mcp" />
+    <child
+      link="thumb_fusion" />
+    <axis
+      xyz="0.25489 -0.044943 -0.96593" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="thumb_dp">
+    <inertial>
+      <origin
+        xyz="1.62638721518116E-08 -0.00225649987895357 -0.0319688777457118"
+        rpy="0 0 0" />
+      <mass
+        value="0.0125524558101447" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_dp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/thumb_dp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dp_thumb_axis"
+    type="revolute">
+    <origin
+      xyz="-0.0635 0 -0.00993775"
+      rpy="1.49011611938477E-08 1.5707963267949 0" />
+    <parent
+      link="thumb_fusion" />
+    <child
+      link="thumb_dp" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="index_mcp_rot">
+    <inertial>
+      <origin
+        xyz="-1.9199E-08 0.00044448 -5.7169E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0027274" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_mcp_rot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_mcp_rot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_index_rot"
+    type="revolute">
+    <origin
+      xyz="0.012938 0.080177 0.12626"
+      rpy="-3.1416 4.0074E-10 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="index_mcp_rot" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="index_mcp_flex">
+    <inertial>
+      <origin
+        xyz="6.9569E-08 -0.00018345 7.9096E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.011601" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_mcp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_mcp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="flex_mcp_index"
+    type="revolute">
+    <origin
+      xyz="0.000508000000005504 0 -0.0285750000000003"
+      rpy="1.2599098441969E-12 -5.36501146197189E-25 4.25899024446941E-13" />
+    <parent
+      link="index_mcp_rot" />
+    <child
+      link="index_mcp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="index_pp_flex">
+    <inertial>
+      <origin
+        xyz="-9.929467983949E-09 0.000233852402511494 0.000718096460216616"
+        rpy="0 0 0" />
+      <mass
+        value="0.00797502254726362" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_pp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_pp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pp_flex_index"
+    type="revolute">
+    <origin
+      xyz="0.000508000000000008 0 -0.0381000000000001"
+      rpy="0 0 -1.70250802175918E-43" />
+    <parent
+      link="index_mcp_flex" />
+    <child
+      link="index_pp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="index_dp_flex">
+    <inertial>
+      <origin
+        xyz="-4.805E-08 5.2937E-05 -0.0030719"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082292" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_dp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/index_dp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dp_index_flex"
+    type="revolute">
+    <origin
+      xyz="0.000523240000000008 0 -0.028575"
+      rpy="0 0 -1.70250802175918E-43" />
+    <parent
+      link="index_pp_flex" />
+    <child
+      link="index_dp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="middle_mcp_rot">
+    <inertial>
+      <origin
+        xyz="-1.91990633530148E-08 0.000444478829915032 -5.71688452710717E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.002727376847205" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_mcp_rot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_mcp_rot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_rot_middle"
+    type="revolute">
+    <origin
+      xyz="0.012938 0.051602 0.13245"
+      rpy="-3.1416 4.0075E-10 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="middle_mcp_rot" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="middle_mcp_flex">
+    <inertial>
+      <origin
+        xyz="6.95685148099923E-08 -0.000183446268669823 7.90961005853463E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0116010193528048" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_mcp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_mcp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_flex_middle"
+    type="revolute">
+    <origin
+      xyz="0.00050800000000438 0 -0.028575"
+      rpy="1.2599098441969E-12 6.98296267714676E-15 4.258307282471E-13" />
+    <parent
+      link="middle_mcp_rot" />
+    <child
+      link="middle_mcp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="middle_pp_flex">
+    <inertial>
+      <origin
+        xyz="-9.9295E-09 0.00023385 0.0007181"
+        rpy="0 0 0" />
+      <mass
+        value="0.007975" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_pp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_pp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pp_middle_flex"
+    type="revolute">
+    <origin
+      xyz="-0.000508000000000002 0 -0.0381"
+      rpy="0 0 -1.70250802175918E-43" />
+    <parent
+      link="middle_mcp_flex" />
+    <child
+      link="middle_pp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="middle_dp_flex">
+    <inertial>
+      <origin
+        xyz="-4.805E-08 5.2937E-05 -0.0030719"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082292" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_dp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/middle_dp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dp_middle_flex"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.028575"
+      rpy="0 0 -1.70250802175918E-43" />
+    <parent
+      link="middle_pp_flex" />
+    <child
+      link="middle_dp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="ring_mcp_rot">
+    <inertial>
+      <origin
+        xyz="-1.91990633564842E-08 0.000444478829915036 -5.71688452710994E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00272737684720501" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_mcp_rot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_mcp_rot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_rot_ring"
+    type="revolute">
+    <origin
+      xyz="0.012938 0.023027 0.12671"
+      rpy="-3.1416 4.0074E-10 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="ring_mcp_rot" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ring_mcp_flex">
+    <inertial>
+      <origin
+        xyz="6.95685148065228E-08 -0.000183446268669819 7.90961005853463E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0116010193528048" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_mcp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_mcp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mcp_ring_flex"
+    type="revolute">
+    <origin
+      xyz="-0.000507999999994492 0 -0.0285750000000003"
+      rpy="1.2599098441969E-12 -5.36512190249862E-25 4.258307282471E-13" />
+    <parent
+      link="ring_mcp_rot" />
+    <child
+      link="ring_mcp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="ring_pp_flex">
+    <inertial>
+      <origin
+        xyz="-9.9295E-09 0.00023385 0.0007181"
+        rpy="0 0 0" />
+      <mass
+        value="0.007975" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_pp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_pp_flex.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pp_ring_flex"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0381"
+      rpy="-1.11022302462491E-16 6.31088724176809E-30 1.57772181044185E-30" />
+    <parent
+      link="ring_mcp_flex" />
+    <child
+      link="ring_pp_flex" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="ring_dp_flex">
+    <inertial>
+      <origin
+        xyz="-4.80503835123547E-08 5.29369261341034E-05 -0.0030718609893115"
+        rpy="0 0 0" />
+      <mass
+        value="0.00822920678266834" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://postfinal/meshes/ring_dp_flex.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geo
