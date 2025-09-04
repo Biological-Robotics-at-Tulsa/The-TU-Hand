@@ -9,7 +9,7 @@ Resource page for viewing URDF Files:
 		-Viewing URDF and SDF Files
 		-Web Viewer for URDF Files: GitHub Repo & Live Website
 		-hyperlink "Website": https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/index.html
-		-Using Google Chrome, drag and drop the TUHand_<version>_URDF folder into the web viewer at the above link.
+		-Using a browser, drag and drop the TUHand_<version>_URDF folder into the web viewer at the above link.
 			-If no visible model, zoom in/out to scale the camera view via the mouse wheel.
 		-The TU hand will be rendered; perspective and joint angles can be controlled by click-to-drag on bodies/background, or clicking "show controls".
 		-(this is not a replacement for RViz or other ROS tutorial components, just a convenient online tool that doesn't require any ROS installed). 
